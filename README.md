@@ -13,4 +13,4 @@ Projeto construído no evento Next Level Week da Rocketseat
 
 ## 📌 Contato
 
-theodom.trodo@gmail.com
+Email: theodom.trodo@gmail.com
