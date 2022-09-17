@@ -1,3 +1,5 @@
+/* base */
+
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +10,30 @@ ul{
     list-style: none;
 }
 
-body{
-    background-image: url(bg.jpg);
-    background-position: top center;
-    background-size: 100% auto;
-    background-repeat: no-repeat;
-    background-color: #121214;
-}
-
 body *{
     font-family: 'Inter', sans-serif;
 }
+
+h1:hover, h2:hover, h3:hover, p:hover {
+    cursor: default;
+}
+
+*::selection {
+    color: white;
+    background-color: rgba(133,67,231,1);
+}
+
+/* background */
+
+body{
+    background: #121214;
+}
+
+header div, section {
+    background: linear-gradient(90deg, rgba(226,92,191,1) 0%, rgba(133,67,231,1) 50%, rgba(67,153,231,1) 100%);
+}
+
+/* header */
 
 header {
     text-align: center;
@@ -28,11 +43,9 @@ header {
 header div {
     width: 120px;
     margin: 32px auto;
-    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     border-radius: 50%;
     display: flex;
     padding: 4px;
-    transition: transform .3s;
     animation: fromTop .7s .2s backwards;
 }
 
@@ -45,33 +58,19 @@ header div img {
     border-radius: 50%;
 }
 
+/* main (sections) */
+
 main {
     max-width: 580px;
     width: 90%;
-    margin: 32px auto;
+    margin: auto;
+    margin-bottom: 32px;
     display: grid;
     gap: 24px;
 }
 
-main section {
-    animation: fromBottom .7s backwards;
-}
-
-main section:nth-child(1) {
-    animation-delay: 0;
-}
-
-main section:nth-child(2) {
-    animation-delay: .4s;
-}
-
-main section:nth-child(3) {
-    animation-delay: .8s;
-}
-
 section {
     color: white;
-    background-image: linear-gradient(90deg, #9572FC 0%, #43E7AD 50.52%, #E2D45C 100%);
     padding-top: 4px;
     border-radius: 10px;
 }
@@ -83,8 +82,19 @@ section div {
     border-radius: 8px;
 }
 
-section h2 {
-    letter-spacing: -0.47px;
+section ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+/* text */
+
+section h1, section h2, section h3 {
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    margin-bottom: 5px;
 }
 
 section p {
@@ -92,14 +102,23 @@ section p {
     color: #A1A1AA;
 }
 
-section ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-    margin-top: 24px;
+/* lists */
+
+.books-list img, .authors-list img {
+    border-radius: 8px;
+    width: 90px;
+    border: 1px solid #443e54;
 }
 
-section ul li {
+.authors-list p {
+    font-size: smaller;
+    text-align: center;
+    width: 90px;
+}
+
+/* transitions */
+
+section ul li, header div {
     transition: transform .3s;
 }
 
@@ -107,18 +126,23 @@ section ul li:hover {
     transform: scale(1.1);
 }
 
-.games-list img {
-    border-radius: 8px;
-    width: 90px;
-}
-
-.channel-list img {
-    border-radius: 50%;
-    width: 70px;
-    border: 1px solid #443e54;
-}
-
 /* animation */
+
+main section {
+    animation: fromTop 1s backwards;
+}
+
+main section:nth-child(1) {
+    animation-delay: .8;
+}
+
+main section:nth-child(2) {
+    animation-delay: .5s;
+}
+
+main section:nth-child(3) {
+    animation-delay: 1s;
+}
 
 @keyframes fromTop {
     from { 
